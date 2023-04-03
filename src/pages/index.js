@@ -20,7 +20,7 @@ export default function Home() {
           <td><a href="#">Home</a></td>
           <td><a href="#">TV Shows</a></td>
           <td><a href="#">Movies</a></td>
-          <td><a href="#">Latest</a></td>
+          <td><a href="/allUser">All User</a></td>
           <td><Link href="/login">Login</Link></td>
         </tr>
         <tr>

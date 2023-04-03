@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "rafid",
+        "email": "random@rand.gg",
+        "password": "$2b$10$EOnzssfxDe9RKlXZEbFtveEt6.qvwf450tnCbrcyOvO5oNKB1FOMa",
+        "isblocked": false,
+        "filename": null
+    },
+    {
+        "id": 2,
+        "name": "abcd",
+        "email": "random@rand.gg",
+        "password": "$2b$10$H.ieRnBBG5RKYLMQ6fGEve9hYrGmg16oVPHIf.7uG8eLalGWZN1GO",
+        "isblocked": false,
+        "filename": null
+    }
+]
