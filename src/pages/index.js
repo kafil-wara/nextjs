@@ -12,6 +12,7 @@ import CarouselComponent from "./components/Carousel";
 export default function Home() {
   return (
     <>
+    //make this a seperate component
     <Head> 
       <title>Home</title>
       <table>
@@ -40,10 +41,5 @@ export default function Home() {
       <CarouselComponent />
     </main>
     </>
-    
-    
-    
-    
-    
   )
 }
