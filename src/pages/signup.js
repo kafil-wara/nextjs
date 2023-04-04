@@ -38,6 +38,7 @@ function Signup() {
 
     return (
         <div>
+          <a href="/">Home</a>
             <h1>Signup</h1>
             <form onSubmit={handleSubmit}>
                 <div>
@@ -66,6 +67,7 @@ function Signup() {
                 </div>
                 <button type="submit">Signup</button>
             </form>
+            <a href="/login">Already have an account? Login</a>
         </div>
     );
 }
