@@ -7,6 +7,7 @@ export default function AdminDashboard() {
     return (
         <>
         <Head>
+            <title>Admin Dashboard</title>
             <table>
                 <tr>
                     <td><a href="/"><img src="images/resize.png"></img></a></td>

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Layout from "./components/layout";
+import Header from "./components/header";
 
 function Email() {
   const [email, setEmail] = useState('');
@@ -17,6 +19,8 @@ function Email() {
   }
 
     return (
+      <>
+      <Header title="Send Email"/>
         <div>
           <a href="/adminDashboard">Back to Admin Dashboard</a>
             <h1>Send Email</h1>
@@ -32,6 +36,7 @@ function Email() {
                 <button type="submit">Send Email</button>
             </form>
         </div>
+        </>
     );
 }
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Header from "./components/header";
 
 function Signup() {
   const [name, setName] = useState('');
@@ -37,6 +38,9 @@ function Signup() {
   }
 
     return (
+      <>
+      <Header title="Signup"/>
+      
         <div>
           <a href="/">Home</a>
             <h1>Signup</h1>
@@ -69,6 +73,7 @@ function Signup() {
             </form>
             <a href="/login">Already have an account? Login</a>
         </div>
+        </>
     );
 }
 

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
+import Header from "./components/header";
+import Head from "next/head";
 
 function ForgotPassword() {
     const [email, setEmail] = useState('');
@@ -26,6 +28,8 @@ function ForgotPassword() {
     }
     
     return (
+        <>
+        <Header/>
         <div>
         <h1>Forgot Password</h1>
         {error && <Alert variant="danger">{error}</Alert>}
@@ -41,6 +45,7 @@ function ForgotPassword() {
             <Link href="/login">Login</Link>
         </div>
         </div>
+        </>
     );
     }
 

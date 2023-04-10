@@ -1,52 +1,28 @@
 import Head from 'next/head';
-import { getLocalData } from '/src/pages/localdata';
-import SearchBar from '/src/pages/components/SearchBar';
+import axios from 'axios';
+import Header from './components/header';
+import Link from 'next/link';
 
-export async function getStaticProps() {
-    const localData = await getLocalData()
-  
-    return {
-      props: { localData }
-    }
-  }
-
-  //export async function getStaticProps() {}
-
-  export default function allUser({ localData }) { 
-  
+export default function GetUser({ users }) {
   return (
-      <>
-        <Head>
-        <table>
-                <tr>
-                    <td><a href="#"><img src="images/resize.png"></img></a></td>
-                    <td><a href="#">Home</a></td>
-                    <td><a href="#">TV Shows</a></td>
-                    <td><a href="#">Movies</a></td>
-                </tr>
-                <tr>
-                    <td><SearchBar /> </td>
-                    <td><a href="#">Subscribe</a></td>
-                </tr>
-            </table>
-        <hr></hr>  
-        </Head>
+    <div>
+      <Header/>
+      <a href="/adminDashboard">Back to Admin Dashboard</a>
+      <h1>User List</h1>
+      <ul>
+        {users.map((user) => (
+          <li key={user.id}>
+            <Link href={"/users/" + user.id}>{user.name}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
-        
-        <section>
-            <a href="/adminDashboard">Back</a>
-            <h2>User List</h2>
-            <ul>
-              {localData.map(({ id, name, email }) => (
-                <li key={id}>
-                  <b>{id} - {name}</b>
-  
-                  <br />
-                  {email}
-                </li>
-              ))}
-            </ul>
-          </section>
-      </>
-    )
-  }
+export async function getServerSideProps() {
+  const response = await axios.get('http://localhost:3000/admin/alluser');
+  const users = await response.data;
+  return { props: { users } }
+}
+

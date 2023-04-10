@@ -2,31 +2,15 @@ import Head from "next/head";
 import Link from "next/link";
 import SearchBar from "./components/SearchBar";
 import CarouselComponent from "./components/Carousel";
+import Layout from "./components/layout";
+import Header from "./components/header";
 
 
 //make the head a seperate component
 export default function Home() {
   return (
     <>
-    
-    <Head> 
-      <title>Home</title>
-      <table>
-        <tr>
-          <td><a href="/"><img src="images/resize.png"></img></a></td>
-          <td><a href="/">Home</a></td>
-          <td><a href="#">TV Shows</a></td>
-          <td><a href="#">Movies</a></td>
-          <td><Link href="/login">Login</Link></td>
-        </tr>
-        <tr>
-          <td><SearchBar /> </td>
-          <td><a href="signup">Subscribe</a></td>
-        </tr>
-      </table>
-      <hr></hr>
-      
-    </Head>
+    <Header title="Home"/>
 
     <main>
       <h2>New Releases</h2>

@@ -1,3 +1,4 @@
+import Header from './components/header';
 import { useState } from 'react';
 
 function Login() {
@@ -19,6 +20,7 @@ function Login() {
 
   return (
     <>
+    <Header title="Login"/>
     <a href='/'>Home</a>
     <div>
       <h1>Login</h1>
