@@ -41,6 +41,9 @@ export default function AdminDashboard() {
             <br></br>
             <br></br>
             <Link href="/email">Send Email</Link>
+            <br></br>
+            <br></br>
+            <Link href="/searchUser">Search User</Link>
         </main>
         </>
 
