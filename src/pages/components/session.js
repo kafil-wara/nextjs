@@ -12,7 +12,7 @@ export default function Session() {
       {
           const session = sessionStorage.getItem('email');
           if (session) {
-            setEmail(sessionStorage.getItem('email'));
+            setEmail(sessionStorage.getItem('email' , email));
            
           }          
       }
@@ -26,7 +26,7 @@ export default function Session() {
             console.log(response.data)
             sessionStorage.removeItem('email');
             setEmail(null);
-            router.push('/signin');
+            router.push('/login');
           } catch (error) {
             console.error(error)
           }

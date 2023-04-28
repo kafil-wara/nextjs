@@ -3,8 +3,22 @@ import Link from 'next/link'
 import SearchBar from './components/SearchBar'
 import allUser from './allUser'
 import SessionCheck from './components/sessionCheck'
+import Session from './components/session'
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+
 
 export default function AdminDashboard() {
+    const [email, setEmail] = useState(null);
+    const router = useRouter();
+    useEffect(() => {
+        const session = sessionStorage.getItem('email');
+        setEmail(session);
+        if (session == null) {
+            router.push('/login');
+        }
+    }, []);
+
     return (
         <>
         <SessionCheck />
@@ -16,6 +30,7 @@ export default function AdminDashboard() {
                     <td><a href="/">Home</a></td>
                     <td><a href="#">TV Shows</a></td>
                     <td><a href="#">Movies</a></td>
+                    {email==null ? <td><a href="/logout">Logout</a></td> : <td><a href="/login">Login</a></td>}
                 </tr>
                 <tr>
                     <td><SearchBar /> </td>

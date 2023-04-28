@@ -22,13 +22,22 @@ function Login() {
 
     try {
       const response = await axios.post('http://localhost:3000/admin/signin', { email, password })
-      console.log("res: "+response.data)
-      console.log("res: "+response.data.email)
-      //console.log()
-      
-        sessionStorage.setItem('email', response.data);
+      //console.log("res: "+response)
+      //console.log("res: "+response.data.email)
+  
+      if (response.data.authenticated == true) {
+        sessionStorage.setItem('email', email);
         router.push('/adminDashboard');
-
+        setIsLoggedIn(true);
+        localStorage.setItem('isLoggedIn', 'true');
+      }
+      else {
+        setError("invalid login")
+        console.log("invalid credentials")
+        return 0;
+      }
+      
+      
     } catch (error) {
         console.log("error22: "+error.message)
       setError("invalid login")
@@ -61,3 +70,4 @@ function Login() {
 }
 
 export default Login;
+
