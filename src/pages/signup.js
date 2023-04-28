@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Header from "./components/header";
+import axios from "axios";
+import Router from "next/router";
 
 function Signup() {
   const [name, setName] = useState('');
@@ -8,6 +10,8 @@ function Signup() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [email, setEmail] = useState('');
   const [profilePicture, setProfilePicture] = useState('');
+  const [error, setError] = useState('');
+
 
   function handleNameChange(event) {
     setName(event.target.value);
@@ -33,9 +37,22 @@ function Signup() {
     setProfilePicture(event.target.value);
   }
 
-  function handleSubmit(event) {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
+    try {
+      const response = await axios.post('http://localhost:3000/admin/signup', { name ,email, password, profilePicture })
+      console.log("res: "+response.data)
+      
+        
+      router.push('/adminDashboard');
+
+    } catch (error) {
+        console.log("error22: "+error.message)
+      setError("invalid signup")
+    }
   }
+  
 
     return (
       <>

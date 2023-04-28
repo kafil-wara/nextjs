@@ -2,10 +2,12 @@ import Head from 'next/head'
 import Link from 'next/link'
 import SearchBar from './components/SearchBar'
 import allUser from './allUser'
+import SessionCheck from './components/sessionCheck'
 
 export default function AdminDashboard() {
     return (
         <>
+        <SessionCheck />
         <Head>
             <title>Admin Dashboard</title>
             <table>

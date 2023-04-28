@@ -1,21 +1,38 @@
 import Header from './components/header';
 import { useState } from 'react';
+import axios from 'axios';
+import { useRouter } from 'next/router';
 
 function Login() {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const router =useRouter();
+  const [error, setError] = useState('');
 
-  function handleUsernameChange(event) {
-    setUsername(event.target.value);
+  function handleEmailChange(event) {
+    setEmail(event.target.value);
   }
 
   function handlePasswordChange(event) {
     setPassword(event.target.value);
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    // TODO: Handle login logic
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+
+    try {
+      const response = await axios.post('http://localhost:3000/admin/signin', { email, password })
+      console.log("res: "+response.data)
+      console.log("res: "+response.data.email)
+      //console.log()
+      
+        sessionStorage.setItem('email', response.data);
+        router.push('/adminDashboard');
+
+    } catch (error) {
+        console.log("error22: "+error.message)
+      setError("invalid login")
+    }
   }
 
   return (
@@ -26,8 +43,8 @@ function Login() {
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="username">Username:</label>
-          <input type="text" id="username" value={username} onChange={handleUsernameChange} />
+          <label htmlFor="email">Email:</label>
+          <input type="text" id="email" value={email} onChange={handleEmailChange} />
         </div>
         <div>
           <label htmlFor="password">Password:</label>
