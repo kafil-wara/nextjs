@@ -45,7 +45,7 @@ export default function AdminDashboard() {
             <Link href="/allUser">All User</Link>
             <br></br>
             <br></br>
-            <Link href="/allUser">All Shows</Link>
+            <Link href="/videos">All Shows</Link>
             <br></br>
             <br></br>
             <Link href="/allUser">Check Manager Requests</Link>
