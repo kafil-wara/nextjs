@@ -1,24 +1,24 @@
-import Head from "next/head";
-import Link from "next/link";
-import SearchBar from "./components/SearchBar";
-import CarouselComponent from "./components/Carousel";
-import Layout from "./components/layout";
-import Header from "./components/header";
+import React, { useEffect, useState } from 'react';
+import Header from './components/header';
+import CarouselComponent from './components/Carousel';
 
-
-//make the head a seperate component
-export default function Home() {
+const Home = () => {
   return (
     <>
-    <Header title="Home"/>
+    <Header title="Home" />
+    
 
-    <main>
-      <h2>New Releases</h2>
+    <main
+      className=" mx-auto px-4 bg-slate-200"
+    >
+      <h2 className="text-2xl font-bold mb-4 text-center">New Releases</h2>
       <CarouselComponent />
 
-      <h2>Popular</h2>
+      <h2 className="text-2xl font-bold my-4 text-center">Popular</h2>
       <CarouselComponent />
     </main>
     </>
-  )
-}
+  );
+};
+
+export default Home;

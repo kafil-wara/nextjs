@@ -1,3 +1,4 @@
+import AdminHeader from "../components/adminHeader";
 import Header from "../components/header";
 import UserLayout from "../components/userLayout";
 import axios from "axios";
@@ -7,7 +8,7 @@ export default function UserProfile({ data }) {
     const router = useRouter();
     return(
         <>
-        <Header title="User Profile"/>
+        <AdminHeader title="User Profile"/>
         <UserLayout user={data} />
         </>
 
