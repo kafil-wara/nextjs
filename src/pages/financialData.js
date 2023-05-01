@@ -7,73 +7,73 @@ const FinancialDataPage = () => {
     const financialData = {
         data: [
             {
-                "month": "January",
+                "month": "January '22",
                 "totalExpense": 8000,
                 "totalIncome": 5000,
                 "profit": -3000
             },
             {
-                "month": "February",
+                "month": "February '22",
                 "totalExpense": 4500,
                 "totalIncome": 7000,
                 "profit": 2500
             },
             {
-                "month": "March",
+                "month": "March '22",
                 "totalExpense": 5500,
                 "totalIncome": 9000,
                 "profit": 3500
             },
             {
-                "month": "April",
+                "month": "April '22",
                 "totalExpense": 4000,
                 "totalIncome": 6000,
                 "profit": 2000
             },
             {
-                "month": "May",
+                "month": "May '22",
                 "totalExpense": 6000,
                 "totalIncome": 9500,
                 "profit": 3500
             },
             {
-                "month": "June",
+                "month": "June '22",
                 "totalExpense": 5500,
                 "totalIncome": 8500,
                 "profit": 3000
             },
             {
-                "month": "July",
+                "month": "July '22",
                 "totalExpense": 4500,
                 "totalIncome": 7500,
                 "profit": 3000
             },
             {
-                "month": "August",
+                "month": "August '22",
                 "totalExpense": 4000,
                 "totalIncome": 7000,
                 "profit": 3000
             },
             {
-                "month": "September",
+                "month": "September '22",
                 "totalExpense": 5500,
                 "totalIncome": 9000,
                 "profit": 3500
             },
             {
-                "month": "October",
+                "month": "October '22",
                 "totalExpense": 4500,
                 "totalIncome": 7500,
                 "profit": 3000
             },
             {
-                "month": "November",
+                "month": "November '22",
                 "totalExpense": 5000,
                 "totalIncome": 8000,
                 "profit": 3000
             },
             {
-                "month": "December",
+                "month": "December '22",
                 "totalExpense": 6000,
                 "totalIncome": 9500,
                 "profit": 3500
@@ -120,7 +120,7 @@ const FinancialDataPage = () => {
                             </tr>
                         ))}
                         <tr>
-                            <td className="py-2 font-bold">Total Profit for the Year</td>
+                            <td className="py-2 font-bold">Total Profit for the Year '22</td>
                             <td className="py-2"></td>
                             <td className="py-2"></td>
                             <td className="py-2 font-bold">
