@@ -30,7 +30,7 @@ function Login() {
       if (response.data.authenticated == true) {
         sessionStorage.setItem('email', email);
         router.push('/adminDashboard');
-        setIsLoggedIn(true);
+        //setIsLoggedIn(true);
         localStorage.setItem('isLoggedIn', 'true');
       }
       else {

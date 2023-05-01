@@ -13,7 +13,7 @@ export default function Logout() {
         .then(() => {
           router.push('/');
           localStorage.removeItem('isLoggedIn');
-          setIsLoggedIn(false);
+          //setIsLoggedIn(false);
         })
         .catch((error) => {
           console.log('Error occurred during logout:', error);
