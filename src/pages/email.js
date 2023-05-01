@@ -18,26 +18,50 @@ function Email() {
     event.preventDefault();
   }
 
-    return (
-      <>
-      <Header title="Send Email"/>
-        <div>
-          <a href="/adminDashboard">Back to Admin Dashboard</a>
-            <h1>Send Email</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="email">Email Address:</label>
-                    <input type="text" id="email" value={email} onChange={handleEmailChange} />
-                </div>
-                <div>
-                    <label htmlFor="body">Body:</label>
-                    <input type="text" id="body" value={body} onChange={handleBodyChange} />
-                </div>
-                <button type="submit">Send Email</button>
-            </form>
-        </div>
-        </>
-    );
+  return (
+    <>
+      <Header title="Send Email" />
+      <div className="container mx-auto px-4">
+        <a href="/adminDashboard" className="text-blue-500 underline mb-4 inline-block">
+          Back to Admin Dashboard
+        </a>
+        <h1 className="text-2xl font-bold">Send Email</h1>
+        <form onSubmit={handleSubmit} className="mt-4">
+          <div className="mb-4 font-bold">
+            <label htmlFor="email" className="block mb-2">
+              Email Address:
+            </label>
+            <input
+              type="text"
+              id="email"
+              value={email}
+              onChange={handleEmailChange}
+              className="w-full p-2 border border-gray-300 rounded"
+            />
+          </div>
+          <div className="mb-4 font-bold">
+            <label htmlFor="body" className="block mb-2">
+              Body:
+            </label>
+            <textarea
+              id="body"
+              value={body}
+              onChange={handleBodyChange}
+              className="w-full p-2 border border-gray-300 rounded"
+              rows="4"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
+          >
+            Send Email
+          </button>
+        </form>
+      </div>
+    </>
+  );
+  
 }
 
 export default Email;

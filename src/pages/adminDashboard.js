@@ -6,9 +6,10 @@ import SessionCheck from './components/sessionCheck'
 import Session from './components/session'
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import AdminHeader from './components/adminHeader';
 
 
-export default function AdminDashboard() {
+const AdminDashboard = () => {
     const [email, setEmail] = useState(null);
     const router = useRouter();
     useEffect(() => {
@@ -21,49 +22,92 @@ export default function AdminDashboard() {
 
     return (
         <>
-        <SessionCheck />
-        <Head>
-            <title>Admin Dashboard</title>
-            <table>
-                <tr>
-                    <td><a href="/"><img src="images/resize.png"></img></a></td>
-                    <td><a href="/">Home</a></td>
-                    <td><a href="#">TV Shows</a></td>
-                    <td><a href="#">Movies</a></td>
-                    {email==null ? <td><a href="/logout">Logout</a></td> : <td><a href="/login">Login</a></td>}
-                </tr>
-                <tr>
-                    <td><SearchBar /> </td>
-                    
-                </tr>
-            </table>
-        <hr></hr>
-        </Head>
+            <SessionCheck />
+            <AdminHeader title="Admin Dashboard" />
+            <br></br><br></br>
 
-        <main>
-            <h2>Admin Dashboard</h2>
-            <Link href="/allUser">All User</Link>
-            <br></br>
-            <br></br>
-            <Link href="/videos">All Shows</Link>
-            <br></br>
-            <br></br>
-            <Link href="/allUser">Check Manager Requests</Link>
-            <br></br>
-            <br></br>
-            <Link href="/signup">Add User</Link>
-            <br></br>
-            <br></br>
-            <Link href="/allUser">Due Payments</Link>
-            <br></br>
-            <br></br>
-            <Link href="/email">Send Email</Link>
-            <br></br>
-            <br></br>
-            <Link href="/searchUser">Search User</Link>
-        </main>
+
+            <main className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <Link href="/allUser" className="border border-gray-300 rounded-lg shadow p-4 flex items-center">
+                    <img src="images/user.png" alt="All Users" className="w-10 h-10 mr-4" />
+                    <div>
+                        <h2 className="text-xl font-bold">All Users</h2>
+                        <p className="text-gray-600">View all users</p>
+                    </div>
+                </Link>
+
+                <Link href="/videos" className="border border-gray-300 rounded-lg shadow p-4 flex items-center">
+                    <img src="images/shows.png" alt="All Shows" className="w-10 h-10 mr-4" />
+                    <div>
+                        <h2 className="text-xl font-bold">All Shows</h2>
+                        <p className="text-gray-600">View all shows</p>
+                    </div>
+                </Link>
+
+                
+
+                <Link href="/signup" className="border border-gray-300 rounded-lg shadow p-4 flex items-center">
+                    <img src="images/addUser.png" alt="Add User" className="w-10 h-10 mr-4" />
+                    <div>
+                        <h2 className="text-xl font-bold">Add User</h2>
+                        <p className="text-gray-600">Add a new user</p>
+                    </div>
+                </Link>
+
+                
+
+                <Link href="/email" className="border border-gray-300 rounded-lg shadow p-4 flex items-center">
+                    <img src="images/email.png" alt="Send Email" className="w-10 h-10 mr-4" />
+                    <div>
+                        <h2 className="text-xl font-bold">Send Email</h2>
+                        <p className="text-gray-600">Send email to users</p>
+                    </div>
+                </Link>
+
+                <Link href="/searchUser" className="border border-gray-300 rounded-lg shadow p-4 flex items-center">
+                    <img src="images/searchUser.png" alt="Search User" className="w-10 h-10 mr-4" />
+                    <div>
+                        <h2 className="text-xl font-bold">Search User</h2>
+                        <p className="text-gray-600">Search for a user</p>
+                    </div>
+                </Link>
+
+                <Link href="/financialData" className="border border-gray-300 rounded-lg shadow p-4 flex items-center">
+                    <img src="images/finance.png" alt="Search User" className="w-10 h-10 mr-4" />
+                    <div>
+                        <h2 className="text-xl font-bold">Financial Data</h2>
+                        <p className="text-gray-600">Check Yearly Financial Report</p>
+                    </div>
+                </Link>
+
+                <Link href="/updateUser" className="border border-gray-300 rounded-lg shadow p-4 flex items-center">
+                    <img src="images/user.png" alt="Search User" className="w-10 h-10 mr-4" />
+                    <div>
+                        <h2 className="text-xl font-bold">Update User</h2>
+                        <p className="text-gray-600">Update a Specific User</p>
+                    </div>
+                </Link>
+
+                <Link href="/allUser" className="border border-gray-300 rounded-lg shadow p-4 flex items-center">
+                    <img src="images/payment.png" alt="Due Payments" className="w-10 h-10 mr-4" />
+                    <div>
+                        <h2 className="text-xl font-bold">Due Payments</h2>
+                        <p className="text-gray-600">View due payments</p>
+                    </div>
+                </Link>
+
+                <Link href="/allUser" className="border border-gray-300 rounded-lg shadow p-4 flex items-center">
+                    <img src="images/manager.png" alt="Check Manager Requests" className="w-10 h-10 mr-4" />
+                    <div>
+                        <h2 className="text-xl font-bold">Check Manager Requests</h2>
+                        <p className="text-gray-600">Check requests from managers</p>
+                    </div>
+                </Link>
+            </main>
+
         </>
 
     )
 }
 
+export default AdminDashboard;
