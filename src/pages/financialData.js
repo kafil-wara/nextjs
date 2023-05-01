@@ -120,7 +120,7 @@ const FinancialDataPage = () => {
                             </tr>
                         ))}
                         <tr>
-                            <td className="py-2 font-bold">Total Profit for the Year '22</td>
+                            <td className="py-2 font-bold">Total Profit for the Year 2022</td>
                             <td className="py-2"></td>
                             <td className="py-2"></td>
                             <td className="py-2 font-bold">
