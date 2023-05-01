@@ -28,7 +28,7 @@ const AdminDashboard = () => {
             <br></br><br></br>
 
 
-            <main className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <body className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Link href="/allUser" className="border border-gray-300 rounded-lg shadow p-4 flex items-center">
                     <Image src="/images/user.png" alt="All Users" className="w-10 h-10 mr-4" width={100} height={100} />
                     <div>
@@ -104,7 +104,7 @@ const AdminDashboard = () => {
                         <p className="text-gray-600">Check requests from managers</p>
                     </div>
                 </Link>
-            </main>
+            </body>
 
         </>
 
