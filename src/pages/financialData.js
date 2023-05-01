@@ -7,73 +7,73 @@ const FinancialDataPage = () => {
     const financialData = {
         data: [
             {
-                "month": "January '22",
+                "month": "January 2022",
                 "totalExpense": 8000,
                 "totalIncome": 5000,
                 "profit": -3000
             },
             {
-                "month": "February '22",
+                "month": "February 2022",
                 "totalExpense": 4500,
                 "totalIncome": 7000,
                 "profit": 2500
             },
             {
-                "month": "March '22",
+                "month": "March 2022",
                 "totalExpense": 5500,
                 "totalIncome": 9000,
                 "profit": 3500
             },
             {
-                "month": "April '22",
+                "month": "April 2022",
                 "totalExpense": 4000,
                 "totalIncome": 6000,
                 "profit": 2000
             },
             {
-                "month": "May '22",
+                "month": "May 2022",
                 "totalExpense": 6000,
                 "totalIncome": 9500,
                 "profit": 3500
             },
             {
-                "month": "June '22",
+                "month": "June 2022",
                 "totalExpense": 5500,
                 "totalIncome": 8500,
                 "profit": 3000
             },
             {
-                "month": "July '22",
+                "month": "July 2022",
                 "totalExpense": 4500,
                 "totalIncome": 7500,
                 "profit": 3000
             },
             {
-                "month": "August '22",
+                "month": "August 2022",
                 "totalExpense": 4000,
                 "totalIncome": 7000,
                 "profit": 3000
             },
             {
-                "month": "September '22",
+                "month": "September 2022",
                 "totalExpense": 5500,
                 "totalIncome": 9000,
                 "profit": 3500
             },
             {
-                "month": "October '22",
+                "month": "October 2022",
                 "totalExpense": 4500,
                 "totalIncome": 7500,
                 "profit": 3000
             },
             {
-                "month": "November '22",
+                "month": "November 2022",
                 "totalExpense": 5000,
                 "totalIncome": 8000,
                 "profit": 3000
             },
             {
-                "month": "December '22",
+                "month": "December 2022",
                 "totalExpense": 6000,
                 "totalIncome": 9500,
                 "profit": 3500
