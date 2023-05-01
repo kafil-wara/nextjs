@@ -12,7 +12,7 @@ export default function UpdateUserPage() {
         e.preventDefault();
 
         try {
-            const response = await axios.put('http://localhost:3000/admin/updateuser', {
+            const response = await axios.put('https://nestjs-production-8281.up.railway.app/admin/updateuser', {
                 id: id,
                 name: name,
                 email: email,

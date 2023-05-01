@@ -44,7 +44,7 @@ function Signup() {
     event.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:3000/admin/signup', { name, email, password, profilePicture })
+      const response = await axios.post('https://nestjs-production-8281.up.railway.app/admin/signup', { name, email, password, profilePicture })
       console.log("res: " + response.data)
 
 

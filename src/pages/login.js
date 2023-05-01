@@ -23,7 +23,7 @@ function Login() {
     event.preventDefault()
 
     try {
-      const response = await axios.post('http://127.0.0.1:3000/admin/signin', { email, password })
+      const response = await axios.post('https://nestjs-production-8281.up.railway.app/admin/signin', { email, password })
       //console.log("res: "+response)
       //console.log("res: "+response.data.email)
 
