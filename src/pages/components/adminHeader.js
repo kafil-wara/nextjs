@@ -22,7 +22,7 @@ export default function AdminHeader(props) {
                     
                 </div>
             </div>
-            <div className="flex flex justify-end">
+            <div className="flex justify-end">
                 <a href="/" className="ml-4 text-lg font-bold text-gray-800 hover:text-gray-600 ">Go To Main Site</a>
             </div>
         </div>
