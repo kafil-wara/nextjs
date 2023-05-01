@@ -2,7 +2,6 @@ import { useState } from "react";
 import Link from "next/link";
 import Header from "./components/header";
 import Head from "next/head";
-import { Alert } from "react-bootstrap/Alert";
 import Image from "next/image";
 
 function ForgotPassword() {
@@ -39,8 +38,7 @@ function ForgotPassword() {
     
             <h1 className="text-2xl font-bold mb-4">Forgot Password</h1>
     
-            {error && <Alert variant="danger">{error}</Alert>}
-            {message && <Alert variant="success">{message}</Alert>}
+            
     
             <form onSubmit={handleSubmit} className="mb-4">
               <div className="mb-3">
