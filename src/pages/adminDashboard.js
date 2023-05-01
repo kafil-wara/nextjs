@@ -16,14 +16,14 @@ const AdminDashboard = () => {
     useEffect(() => {
         const session = sessionStorage.getItem('email');
         setEmail(session);
-        // if (session == null) {
-        //     router.push('/login');
-        // }
+        if (session == null) {
+            router.push('/login');
+        }
     }, []);
 
     return (
         <>
-            {/* <SessionCheck /> */}
+            <SessionCheck />
             <AdminHeader title="Admin Dashboard" />
             <br></br><br></br>
 

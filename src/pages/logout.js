@@ -9,7 +9,7 @@ export default function Logout() {
     // Perform logout actions only on the client-side
     if (typeof sessionStorage !== 'undefined') {
       sessionStorage.removeItem('email');
-      axios.get('http://localhost:3000/admin/signout')
+      axios.get('https://nestjs-production-8281.up.railway.app/admin/signout')
         .then(() => {
           router.push('/');
           localStorage.removeItem('isLoggedIn');

@@ -32,7 +32,7 @@ export default function GetUser({ users }) {
 
 
 export async function getServerSideProps() {
-  const response = await axios.get('http://localhost:3000/admin/alluser');
+  const response = await axios.get('https://nestjs-production-8281.up.railway.app/admin/alluser');
   const users = await response.data;
   return { props: { users } }
 }

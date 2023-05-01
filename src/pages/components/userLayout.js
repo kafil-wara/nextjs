@@ -9,7 +9,7 @@ export default function UserLayout({ user }) {
     const status = isBlocked === "true" ? "false" : "true";
     // Make API request to block/unblock the user
     axios
-      .put('http://localhost:3000/admin/blockuser', { id: user.id, status })
+      .put('https://nestjs-production-8281.up.railway.app/admin/blockuser', { id: user.id, status })
       .then(response => {
         // Handle successful response
         console.log('User blocked/unblocked successfully:', response.data);
