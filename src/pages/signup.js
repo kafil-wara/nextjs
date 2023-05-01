@@ -3,6 +3,8 @@ import Header from "./components/header";
 import axios from "axios";
 import Router from "next/router";
 import router from "next/router";
+import Image from "next/image";
+import Link from "next/link";
 
 function Signup() {
   const [name, setName] = useState('');
@@ -61,10 +63,12 @@ function Signup() {
 
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm" >
-          <img
+          <Image
             className="mx-auto h-10 w-auto"
-            src="images/resize.png"
+            src="/images/resize.png"
             alt="Your Company"
+            width={200}
+            height={200}
           />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Create a New Account
@@ -154,7 +158,7 @@ function Signup() {
                 Sign Up
               </button>
             </div>
-            <a href="/login" className="block text-sm font-medium leading-6 text-gray-900">Already have an account? Login</a>
+            <Link href="/login" className="block text-sm font-medium leading-6 text-gray-900">Already have an account? Login</Link>
             {error &&
               <div>
 

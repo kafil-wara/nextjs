@@ -38,9 +38,9 @@ export default function VideoList() {
     <>
       <AdminHeader title="Video List" />
       <div>
-        <a href="/adminDashboard" className="text-blue-500 underline">
+        <Link href="/adminDashboard" className="text-blue-500 underline">
           Back to Admin Dashboard
-        </a>
+        </Link>
         <h1 className="text-xl font-bold mt-4 text-center">All Videos</h1>
         <br></br>
         <br></br>
@@ -63,11 +63,10 @@ export default function VideoList() {
                 <td className="py-2 text-center">{video.status}</td>
                 <td className="py-2 text-center">
                   <button
-                    className={`py-1 px-4 border-2 ${
-                      video.status === 'active'
+                    className={`py-1 px-4 border-2 ${video.status === 'active'
                         ? 'bg-green-500 border-green-500 text-white'
                         : 'bg-red-500 border-red-500 text-white'
-                    }`}
+                      }`}
                     onClick={() => toggleStatus(index)}
                   >
                     {video.status === 'active' ? 'Block' : 'Unblock'}

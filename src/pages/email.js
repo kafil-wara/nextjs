@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Layout from "./components/layout";
 import Header from "./components/header";
+import Link from "next/link";
 
 function Email() {
   const [email, setEmail] = useState('');
@@ -22,9 +23,9 @@ function Email() {
     <>
       <Header title="Send Email" />
       <div className="container mx-auto px-4">
-        <a href="/adminDashboard" className="text-blue-500 underline mb-4 inline-block">
+        <Link href="/adminDashboard" className="text-blue-500 underline mb-4 inline-block">
           Back to Admin Dashboard
-        </a>
+        </Link>
         <h1 className="text-2xl font-bold">Send Email</h1>
         <form onSubmit={handleSubmit} className="mt-4">
           <div className="mb-4 font-bold">
