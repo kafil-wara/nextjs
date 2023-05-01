@@ -1,6 +1,7 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import Image from 'next/image';
 
 const CarouselComponent = () => {
   return (
@@ -11,15 +12,15 @@ const CarouselComponent = () => {
       infiniteLoop={true}
     >
       <div>
-        <img src="/images/thor.jpg" alt="Thor" className="rounded-lg" />
+        <Image src="/images/thor.jpg" alt="Thor" className="rounded-lg" width={500} height={300} />
         <p className="text-center mt-2 text-xl font-bold"></p>
       </div>
       <div>
-        <img src="/images/expendables.jpg" alt="The Expendables" className="rounded-lg" />
+        <Image src="/images/expendables.jpg" alt="The Expendables" className="rounded-lg" width={500} height={300} />
         <p className="text-center mt-2 text-xl font-bold"></p>
       </div>
       <div>
-        <img src="/images/mix.jpg" alt="Mixed" className="rounded-lg" />
+        <Image src="/images/mix.jpg" alt="Mixed" className="rounded-lg" width={500} height={300} />
         <p className="text-center mt-2 text-xl font-bold"></p>
       </div>
     </Carousel>

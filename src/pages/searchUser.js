@@ -25,9 +25,9 @@ function SearchUser() {
   return (
     <>
     <Header/>
-    <a href="/adminDashboard" className="text-blue-500 underline mb-4 inline-block">
+    <Link href="/adminDashboard" className="text-blue-500 underline mb-4 inline-block">
           Back to Admin Dashboard
-        </a>
+        </Link>
     <div className="text-center mt-4">
   <form onSubmit={handleSubmit} className="inline-block">
     <label className="mr-2">

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import AdminHeader from './components/adminHeader';
+import Link from 'next/link';
 
 export default function UpdateUserPage() {
     const [id, setId] = useState('');
@@ -33,9 +34,9 @@ export default function UpdateUserPage() {
         <>
             <AdminHeader />
 
-            <a href="/adminDashboard" className="text-blue-500 underline mb-4 inline-block">
+            <Link href="/adminDashboard" className="text-blue-500 underline mb-4 inline-block">
                 Back to Admin Dashboard
-            </a>
+            </Link>
 
             <div className="container mx-auto px-4 py-8 text-center">
                 <h1 className="text-2xl font-bold mb-4">Update User</h1>

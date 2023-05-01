@@ -9,9 +9,9 @@ export default function GetUser({ users }) {
     <div className="bg-gray-100 min-h-screen">
       <AdminHeader title="All Users" />
       <div className="max-w-3xl mx-auto p-8">
-        <a href="/adminDashboard" className="text-blue-500 underline mb-4 inline-block">
+        <Link href="/adminDashboard" className="text-blue-500 underline mb-4 inline-block">
           Back to Admin Dashboard
-        </a>
+        </Link>
         <h1 className="text-2xl font-bold mb-4">User List</h1>
         <div className='text-blue-500 underline mb-4 inline-block font-bold'>
           <Link href="/searchUser"> Search User</Link>

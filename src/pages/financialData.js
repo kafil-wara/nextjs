@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend, Tooltip } from 'recharts';
 import AdminHeader from './components/adminHeader';
+import Link from 'next/link';
 
 const FinancialDataPage = () => {
     const financialData = {
@@ -83,9 +84,9 @@ const FinancialDataPage = () => {
     return (
         <>
             <AdminHeader />
-            <a href="/adminDashboard" className="text-blue-500 underline mb-4 inline-block">
-          Back to Admin Dashboard
-        </a>
+            <Link href="/adminDashboard" className="text-blue-500 underline mb-4 inline-block">
+                Back to Admin Dashboard
+            </Link>
             <div className="container mx-auto px-4 py-8 text-center">
                 <h1 className="text-2xl font-bold mb-4">Financial Data</h1>
                 <div className="mb-8 mx-auto">
@@ -101,36 +102,36 @@ const FinancialDataPage = () => {
                     </BarChart>
                 </div>
                 <table className="w-full">
-    <thead>
-      <tr>
-        <th className="py-2">Month</th>
-        <th className="py-2">Total Expense</th>
-        <th className="py-2">Total Income</th>
-        <th className="py-2">Profit</th>
-      </tr>
-    </thead>
-    <tbody>
-      {financialData.data.map((item) => (
-        <tr key={item.month}>
-          <td className="py-2">{item.month}</td>
-          <td className="py-2">{item.totalExpense}</td>
-          <td className="py-2">{item.totalIncome}</td>
-          <td className="py-2">{item.profit}</td>
-        </tr>
-      ))}
-      <tr>
-        <td className="py-2 font-bold">Total Profit for the Year</td>
-        <td className="py-2"></td>
-        <td className="py-2"></td>
-        <td className="py-2 font-bold">
-          {financialData.data.reduce(
-            (total, item) => total + item.profit,
-            0
-          )}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+                    <thead>
+                        <tr>
+                            <th className="py-2">Month</th>
+                            <th className="py-2">Total Expense</th>
+                            <th className="py-2">Total Income</th>
+                            <th className="py-2">Profit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {financialData.data.map((item) => (
+                            <tr key={item.month}>
+                                <td className="py-2">{item.month}</td>
+                                <td className="py-2">{item.totalExpense}</td>
+                                <td className="py-2">{item.totalIncome}</td>
+                                <td className="py-2">{item.profit}</td>
+                            </tr>
+                        ))}
+                        <tr>
+                            <td className="py-2 font-bold">Total Profit for the Year</td>
+                            <td className="py-2"></td>
+                            <td className="py-2"></td>
+                            <td className="py-2 font-bold">
+                                {financialData.data.reduce(
+                                    (total, item) => total + item.profit,
+                                    0
+                                )}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
 

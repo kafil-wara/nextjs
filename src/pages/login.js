@@ -2,11 +2,13 @@ import Header from './components/header';
 import { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import Image from 'next/image'
+import Link from 'next/link';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const router =useRouter();
+  const router = useRouter();
   const [error, setError] = useState('');
 
   function handleEmailChange(event) {
@@ -21,10 +23,10 @@ function Login() {
     event.preventDefault()
 
     try {
-      const response = await axios.post('http://localhost:3000/admin/signin', { email, password })
+      const response = await axios.post('http://127.0.0.1:3000/admin/signin', { email, password })
       //console.log("res: "+response)
       //console.log("res: "+response.data.email)
-  
+
       if (response.data.authenticated == true) {
         sessionStorage.setItem('email', email);
         router.push('/adminDashboard');
@@ -36,43 +38,24 @@ function Login() {
         console.log("invalid credentials")
         return 0;
       }
-      
-      
+
+
     } catch (error) {
-        console.log("error22: "+error.message)
+      console.log("error22: " + error.message)
       setError("invalid login")
     }
   }
 
   return (
     <>
-    {/* <a href='/'>Home</a>
-    <div>
-      <h1 className="text-3xl font-bold underline">Login</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input 
-          type="text" id="email" value={email} onChange={handleEmailChange} 
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input type="password" id="password" value={password} onChange={handlePasswordChange} />
-        </div>
-        <button type="submit">Login</button>
-        <a href='/forgotPassword'>Forgot Password?</a>
-        <br></br>
-        <a href="/signup">Join Us!</a>        
-      </form>
-    </div> */}
-
-<div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm" >
-          <img
+          <Image
             className="mx-auto h-10 w-auto"
-            src="images/resize.png"
+            src="/images/resize.png"
             alt="Your Company"
+            height={200}
+            width={200}
           />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Sign in to your account
@@ -90,8 +73,8 @@ function Login() {
                   id="email"
                   name="email"
                   type="email"
-                  value={email} 
-                  onChange={handleEmailChange} 
+                  value={email}
+                  onChange={handleEmailChange}
                   autoComplete="email"
                   required
                   placeholder='   Email'
@@ -106,9 +89,9 @@ function Login() {
                   Password
                 </label>
                 <div className="text-sm">
-                  <a href="/forgotPassword" className="font-semibold text-red-600 hover:text-pink-500">
+                  <Link href="/forgotPassword" className="font-semibold text-red-600 hover:text-pink-500">
                     Forgot password?
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="mt-2">
@@ -116,7 +99,7 @@ function Login() {
                   id="password"
                   name="password"
                   type="password"
-                  value={password} 
+                  value={password}
                   onChange={handlePasswordChange}
                   autoComplete="current-password"
                   required
@@ -135,25 +118,25 @@ function Login() {
               </button>
             </div>
             {error &&
-                  <div>
-                    
-                    <p id="outlined_error_help" class="mt-2 text-xs text-red-600 dark:text-red-400"><span class="font-medium">{error}</span></p>
-                  </div>
-                }   
+              <div>
+
+                <p id="outlined_error_help" class="mt-2 text-xs text-red-600 dark:text-red-400"><span class="font-medium">{error}</span></p>
+              </div>
+            }
           </form>
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Not a member?{' '}
-            <a href="/signup" className="font-semibold leading-6 text-red-600 hover:text-red-500">
+            <Link href="/signup" className="font-semibold leading-6 text-red-600 hover:text-red-500">
               Sign Up Now!
-            </a>
+            </Link>
           </p>
         </div>
       </div>
 
     </>
 
-    
+
   );
 }
 

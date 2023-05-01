@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import SessionCheck from '../components/sessionCheck';
 import AdminHeader from '../components/adminHeader';
+import Link from 'next/link';
 
 export default function VideoPage() {
   const router = useRouter();
@@ -17,9 +18,9 @@ export default function VideoPage() {
       <AdminHeader title="Video Page" />
 
       <div className="container mx-auto px-4">
-        <a href="/videos" className="text-blue-500 underline mb-4 inline-block">
+        <Link href="/videos" className="text-blue-500 underline mb-4 inline-block">
           Back to all videos
-        </a>
+        </Link>
       </div>
 
       <div className="flex justify-center">
