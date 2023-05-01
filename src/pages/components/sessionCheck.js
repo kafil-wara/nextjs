@@ -14,5 +14,5 @@ export default function SessionCheck () {
     }
   }, []);
 
-  //return null;
+  return null;
 };
