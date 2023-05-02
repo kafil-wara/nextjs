@@ -21,6 +21,7 @@ export default function UpdateUserPage() {
             if (response.status === 200) {
                 // Data successfully updated
                 console.log('User data updated');
+                alert("User data updated!");
             } else {
                 // Handle error case
                 console.log('Failed to update user data');
@@ -72,7 +73,7 @@ export default function UpdateUserPage() {
                             Email:
                         </label>
                         <input
-                            type="text"
+                            type="email"
                             id="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
