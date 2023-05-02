@@ -1,9 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-export default function UserLayout({ user }) {
+function UserLayout({ user }) {
   const [isBlocked, setIsBlocked] = useState(user?.isblocked || false);
+  // const id = user.id;
+  const router = useRouter();
+  const { id } = router.query;
+   //console.log(id + "?");
+ 
+
+  //let url = "https://nestjs-production-8281.up.railway.app/admin/deleteuser?id=" + id;
+  //console.log(url);
+  
+  const handleDeleteUser = () => {
+    //console.log("GG" + id);
+    //console.log(url);
+    try {
+      //alert(`Are you sure you want to delete user ${id}`)
+      axios.delete(`https://nestjs-production-8281.up.railway.app/admin/deleteuser?id=${id}`)
+      alert(`User ${id} has been deleted`)
+      console.log("User deleted successfully!");
+      router.push('/allUser');
+    }
+    catch(error) {  
+      console.error("Error deleting user: ", error);
+    }
+  };
 
   const handleBlockUser = () => {
     const status = isBlocked ? false : true;
@@ -22,6 +46,7 @@ export default function UserLayout({ user }) {
         alert('An error occurred while blocking/unblocking the user. Please try again later.');
       });
   };
+
 
   if (!user) {
     // Handle the case when the user object is undefined or null
@@ -61,7 +86,13 @@ export default function UserLayout({ user }) {
         >
           {isBlocked ? 'Unblock User' : 'Block User'}
         </button>
+        <button onClick={handleDeleteUser} className='mt-4 py-2 px-4 rounded border-2 border-gray-300 bg-red-500 text-white-500'>
+            Delete User
+        </button>
       </div>
     </div>
   );
 }
+
+
+export default UserLayout;
