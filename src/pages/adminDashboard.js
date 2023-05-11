@@ -19,7 +19,7 @@ const AdminDashboard = () => {
         if (session == null) {
             router.push('/login');
         }
-    }, []);
+    },);
 
     return (
         <>
