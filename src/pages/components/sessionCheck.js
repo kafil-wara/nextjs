@@ -12,7 +12,7 @@ export default function SessionCheck () {
     if (session !== 'admin@bdflix.com') {
       router.push('/login');
     }
-  }, []);
+  },);
 
   return null;
 };
