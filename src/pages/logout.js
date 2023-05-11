@@ -19,7 +19,7 @@ export default function Logout() {
           console.log('Error occurred during logout:', error);
         });
     }
-  },);
+  }, []);
 
   return null;
 }

@@ -17,7 +17,7 @@ export default function Session() {
       }
     }
 
-  },);
+  }, []);
 
   const handleSignOut = async (event) => {
     event.preventDefault();
