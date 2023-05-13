@@ -23,6 +23,7 @@ const AdminDashboard = () => {
 
     return (
         <>
+        <SessionCheck />
             <Head>
                 <title>Admin Dashboard</title>
             </Head>
