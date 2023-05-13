@@ -12,7 +12,7 @@ export default function SessionCheck () {
     if (session == 'admin@bdflix.com') {
       router.push('/adminDashboard');
     }
-    else if (!session) {
+    else {
       router.push('/login');
     }
   }, []);
