@@ -30,7 +30,13 @@ function Login() {
 
       if (response.data.authenticated == true) {
         sessionStorage.setItem('email', email);
-        router.push('/adminDashboard');
+        if (sessionStorage.getItem('email') == "admin@bdflix.com") {
+          router.push('/adminDashboard');
+        }
+        else{
+          router.push('/');
+        }
+        
         //setIsLoggedIn(true);
         //localStorage.setItem('isLoggedIn', 'true');
       }
