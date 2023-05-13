@@ -21,8 +21,7 @@ export default function Header(props) {
                         </div>
                         <div className="flex items-center">
                             <SearchBar />
-                            <Link href="signup" className="ml-4 px-4 py-2 rounded-full bg-red-500 text-white text-lg font-bold hover:bg-red-600">Subscribe</Link>
-                            <Link href='login' className="ml-4 px-4 py-2 rounded-full bg-red-500 text-white text-lg font-bold hover:bg-red-600">Login</Link>
+                            <Link href="logout" className="ml-4 px-4 py-2 rounded-full bg-red-500 text-white text-lg font-bold hover:bg-red-600">Logout</Link>
                         </div>
                     </div>
                 </div>

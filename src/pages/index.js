@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Header from './components/header';
 import CarouselComponent from './components/Carousel';
+import SessionCheck from './components/sessionCheck';
 
 const Home = () => {
   return (
     <>
+    <SessionCheck />
     <Header title="Home" />
     
 
