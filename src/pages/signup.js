@@ -5,6 +5,7 @@ import Router from "next/router";
 import router from "next/router";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
 function Signup() {
   const [name, setName] = useState('');
@@ -59,6 +60,9 @@ function Signup() {
 
   return (
     <>
+    <Head>
+      <title>SignUp</title>
+    </Head>
 
 
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">

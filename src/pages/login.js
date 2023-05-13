@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import Image from 'next/image'
 import Link from 'next/link';
+import Head from 'next/head';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -31,7 +32,7 @@ function Login() {
         sessionStorage.setItem('email', email);
         router.push('/adminDashboard');
         //setIsLoggedIn(true);
-        localStorage.setItem('isLoggedIn', 'true');
+        //localStorage.setItem('isLoggedIn', 'true');
       }
       else {
         setError("invalid login")
@@ -48,15 +49,21 @@ function Login() {
 
   return (
     <>
+    <Head>
+      <title>Login</title>
+    </Head>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm" >
-          <Image
-            className="mx-auto h-10 w-auto"
-            src="/images/resize.png"
-            alt="Your Company"
-            height={200}
-            width={200}
-          />
+          <Link href="/">
+            <Image
+              className="mx-auto h-10 w-auto"
+              src="/images/resize.png"
+              alt="Your Company"
+              height={200}
+              width={200}
+            />
+          </Link>
+          
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Sign in to your account
           </h2>
@@ -120,7 +127,7 @@ function Login() {
             {error &&
               <div>
 
-                <p id="outlined_error_help" class="mt-2 text-xs text-red-600 dark:text-red-400"><span class="font-medium">{error}</span></p>
+                <p id="outlined_error_help" className="mt-2 text-xs text-red-600 dark:text-red-400"><span className="font-medium">{error}</span></p>
               </div>
             }
           </form>

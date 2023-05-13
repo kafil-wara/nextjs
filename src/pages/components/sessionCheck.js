@@ -9,7 +9,10 @@ export default function SessionCheck () {
     //console.log(JSON.stringify(session));
     //console.log(typeof(session));
     //console.log(session)
-    if (session !== 'admin@bdflix.com') {
+    if (session == 'admin@bdflix.com') {
+      router.push('/adminDashboard');
+    }
+    else if (!session) {
       router.push('/login');
     }
   }, []);
