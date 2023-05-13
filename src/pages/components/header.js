@@ -25,11 +25,6 @@ export default function Header(props) {
                         </div>
                     </div>
                 </div>
-
-
-
-
-
             </Head>
         </>
     )

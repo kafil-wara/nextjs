@@ -15,6 +15,9 @@ export default function Session() {
         setEmail(sessionStorage.getItem('email', email));
 
       }
+      else {
+        router.push('/login');
+      }
     }
 
   }, []);
@@ -33,33 +36,34 @@ export default function Session() {
 
   };
 
-  return (
-    <>
-      {email !== null ? (
-        <>
-          <div class="flex md:order-2">
+  return null;
+  // return (
+  //   <>
+  //     {email !== null ? (
+  //       <>
+  //         <div class="flex md:order-2">
 
-            <a href="#" class="pr-3 pt-2 font-medium text-blue-600 dark:text-blue-500 hover:underline">{email}</a>
-            <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={handleSignOut}>Sign out</button>
+  //           <a href="#" class="pr-3 pt-2 font-medium text-blue-600 dark:text-blue-500 hover:underline">{email}</a>
+  //           <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={handleSignOut}>Sign out</button>
 
-            <Link href="/adminDashboard" class="text-white bg-gray-400 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">DashBoard</Link>
+  //           <Link href="/adminDashboard" class="text-white bg-gray-400 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">DashBoard</Link>
 
 
-          </div>
+  //         </div>
 
-        </>
-      ) : (
-        <div class="flex md:order-2">
-          <Link href="/login"
-            class="text-white bg-gray-400 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Sign in
-          </Link>
+  //       </>
+  //     ) : (
+  //       <div class="flex md:order-2">
+  //         <Link href="/login"
+  //           class="text-white bg-gray-400 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+  //         >
+  //           Sign in
+  //         </Link>
 
-        </div>
+  //       </div>
 
-      )}
+  //     )}
 
-    </>
-  );
+  //   </>
+  // );
 }
